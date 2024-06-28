@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, #c9aef5, #fea87a, #72c1e3, #5fffac, #e7ff7b);
+    background-size: 800% 800%;
+    animation: gradiente 25s ease infinite;
+    margin: 0;
+
+}
+
+@keyframes gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

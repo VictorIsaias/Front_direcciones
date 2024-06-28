@@ -1,0 +1,17 @@
+
+<google-map
+  height="80vh" width="96%" 
+  [center]="center"
+  [zoom]="zoom">
+    <map-marker
+    #markerElem
+    *ngFor="let markerPosition of markerPositions; let i = index"
+    [position]="markerPosition.position"
+    [options]="markerOptions"
+    (mapClick)="openInfoWindow(i)"
+    >
+    </map-marker>
+    <map-info-window>
+        {{ infoContent }}
+    </map-info-window>
+</google-map>

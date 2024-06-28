@@ -1,0 +1,26 @@
+<mat-card appearance="outlined" class="form-container" >
+    <mat-card-header>
+      <mat-card-title style="margin-bottom: 20px;">INICIO DE SESION</mat-card-title>
+    </mat-card-header>
+      <form [formGroup]="form" (ngSubmit)="submit()">
+          <mat-form-field  appearance="outline" class="form-group input">
+            <mat-label>Usuario/telefono/email</mat-label>
+            <input matInput formControlName="input" >
+    
+          </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-group input">
+          <mat-label>Contraseña</mat-label>
+          <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+    
+    
+        <button mat-raised-button type="submit" color="primary">Enviar</button>
+        <a color="primary" mat-button (click)="redirect()" target="_blank">No tengo una cuenta</a>
+        
+      </form>
+    </mat-card>
+  

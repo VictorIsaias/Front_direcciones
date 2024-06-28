@@ -1,0 +1,13 @@
+
+  
+  .map-container {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .map-container {
+      margin-top: 0;
+    }
+  }
+  

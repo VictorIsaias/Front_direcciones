@@ -1,0 +1,42 @@
+<div class="container">
+  <mat-card class="form-container">
+    <form class="form" [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="input">
+        <mat-label>Calle</mat-label>
+        <input matInput formControlName="street">
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Colonia</mat-label>
+        <input matInput formControlName="suburb">
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Ciudad</mat-label>
+        <input matInput formControlName="city">
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Estado</mat-label>
+        <input matInput formControlName="state">
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>País</mat-label>
+        <input matInput formControlName="country">
+      </mat-form-field>
+      <mat-form-field class="input">
+        <mat-label>Código Postal</mat-label>
+        <input matInput formControlName="zip_code">
+      </mat-form-field>
+      <button mat-raised-button class="button" color="primary" type="submit">Agregar Dirección</button>
+    </form>
+  </mat-card>
+  <div class="map-container">
+    <google-map height="400px" width="100%"
+    [center]="center"
+    [zoom]="zoom"
+    (mapClick)="onMapClick($event)">
+      <map-marker *ngIf="markerPosition"
+        [position]="markerPosition"
+        [options]="markerOptions">
+      </map-marker>
+    </google-map>
+  </div>
+</div>
